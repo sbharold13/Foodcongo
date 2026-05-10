@@ -1,0 +1,483 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght,XOPQ,XTRA,YOPQ,YTDE,YTFI,YTLC,YTUC@8..144,100..1000,96,468,79,-203,738,514,712&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --orange: #ffac0c;
+    --grey: rgb(124, 124, 124);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    padding: 20px 6% 0 6%;
+    background-color: black;
+    color: white;
+}
+
+/* ================= TITRES ================= */
+
+h1{
+    font-size: 3vw;
+}
+
+.description {
+    color: var(--grey);
+    font-size: 15px;
+    line-height: 25px;
+}
+
+.mini-title {
+    color: var(--orange);
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* ================= IMAGES ================= */
+
+img {
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+img:hover {
+    transform: scale(1.05);
+}
+
+/* ================= NAVBAR ================= */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background-color: black;
+    padding: 15px 0;
+}
+
+nav h1 {
+    font-size: 1.5em;
+}
+
+nav h1 span {
+    color: var(--orange);
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+nav ul a {
+    text-decoration: none;
+    color: inherit;
+}
+
+nav ul #label {
+    display: none;
+}
+
+nav ul li {
+    margin-right: 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+nav ul li:hover {
+    color: var(--orange);
+}
+
+nav ul button {
+    padding: 8px 20px;
+    color: var(--orange);
+    background-color: transparent;
+    border: 1px solid var(--orange);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+nav ul button:hover {
+    background-color: var(--orange);
+    color: white;
+}
+
+/* ================= HEADER ================= */
+
+header {
+    position: relative;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 20px;
+    margin-top: 60px;
+}
+
+header video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
+}
+
+/* Overlay sombre pour lisibilité du texte */
+header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 1;
+}
+
+header .left {
+    position: relative;
+    z-index: 2;
+    max-width: 550px;
+    padding: 40px;
+}
+
+header .left button {
+    margin-top: 30px;
+    padding: 12px 35px;
+    background-color: transparent;
+    color: var(--orange);
+    border: 1px solid var(--orange);
+    font-size: 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+header .left button:hover {
+    background-color: var(--orange);
+    color: white;
+}
+
+/* ================= PARTICULES ================= */
+
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1;
+    animation: fall linear infinite;
+    opacity: 0;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-20px) rotate(0deg) scale(1);
+        opacity: 1;
+    }
+    70% {
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(500px) rotate(540deg) scale(0.4);
+        opacity: 0;
+    }
+}
+
+/* ================= PRESENTATION ================= */
+
+.presentation {
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 30px;
+    align-items: center;
+    margin-top: 120px;
+}
+
+.presentation .left {
+    grid-column: 1 / 3;
+}
+
+.presentation .left img {
+    width: 100%;
+    animation: rotateFood 8s linear infinite;
+}
+
+.presentation .right {
+    grid-column: 3 / 6;
+}
+
+/* ================= RECIPES ================= */
+
+#recipies {
+    margin-top: 120px;
+    border: 2px solid var(--orange);
+    border-radius: 20px;
+    padding: 50px 30px;
+    text-align: center;
+}
+
+#recipies h2 {
+    margin-top: 10px;
+    font-size: 2rem;
+}
+
+#recipies .cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 50px;
+}
+
+#recipies .cards .card {
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.4s;
+}
+
+#recipies .cards .card:hover {
+    transform: translateY(-10px);
+}
+
+/* ================= ROTATION IMAGES ================= */
+
+@keyframes rotateFood {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#recipies .cards .card img {
+    width: 220px;
+    height: 220px;
+    object-fit: contain;
+    filter: brightness(90%);
+    animation: rotateFood 5s linear infinite;
+    transition: 0.4s;
+}
+
+#recipies .cards .card h3 {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+}
+
+#recipies .cards .card .rating-stars {
+    margin-bottom: 10px;
+}
+
+#recipies .cards .card .rating-stars i {
+    color: gold;
+    font-size: 12px;
+}
+
+#recipies .cards .card p {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* ================= NEWSLETTER ================= */
+
+#newsletter {
+    margin-top: 120px;
+    background: linear-gradient(to right, #f12711, #f5af19);
+    padding: 60px 30px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#newsletter h1 {
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 25px;
+}
+
+#newsletter form {
+    display: flex;
+    width: 50%;
+}
+
+#newsletter form input {
+    width: 100%;
+    padding: 15px 20px;
+    border: none;
+    outline: none;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+#newsletter form button {
+    padding: 0 25px;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    margin-top: 120px;
+    display: flex;
+    padding: 40px 20px;
+    border-top: 1px solid var(--grey);
+}
+
+footer .column {
+    flex: 1;
+    margin-right: 20px;
+}
+
+footer .column p {
+    color: var(--grey);
+    font-size: 14px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+footer .column p:hover {
+    color: var(--orange);
+}
+
+footer .important {
+    flex: 2;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media screen and (max-width: 640px) {
+
+    body {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+    nav {
+        margin-left: -20px;
+        margin-right: -20px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    nav ul li,
+    nav ul button {
+        display: none;
+    }
+
+    nav ul #label {
+        display: block;
+        font-size: 25px;
+    }
+
+    nav.responsive {
+        position: relative;
+        display: block;
+        padding-top: 10px;
+    }
+
+    nav.responsive ul {
+        padding: 0;
+    }
+
+    nav.responsive ul li {
+        display: block;
+        margin: 15px 0;
+    }
+
+    nav.responsive ul #label {
+        position: absolute;
+        right: 0;
+        top: 10px;
+    }
+
+    header {
+        min-height: 100vh;
+        border-radius: 0;
+        align-items: flex-end;
+        overflow: hidden;
+        margin-left: -20px;
+        margin-right: -20px;
+        margin-top: -20px;
+    }
+
+    header .left {
+        padding: 30px 20px;
+        background: linear-gradient(to top,rgba(0,0,0,0.9), transparent);
+        width: 100%;
+    }
+    header .left h1 {
+        font-size: 1.8rem;
+    }
+    header .left .description {
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 13px;
+    }
+
+    .presentation {
+        margin-top: 80px;
+        display: block;
+        text-align: center;
+    }
+
+    .presentation .right {
+        margin-top: 40px;
+    }
+
+    #recipies {
+        margin-top: 80px;
+        padding: 40px 20px;
+    }
+
+    #recipies h2 {
+        font-size: 1.6rem;
+    }
+
+    #recipies .cards {
+        gap: 30px;
+    }
+
+    #newsletter {
+        margin-top: 80px;
+    }
+
+    #newsletter h1 {
+        text-align: center;
+        font-size: 22px;
+    }
+
+    #newsletter form {
+        width: 100%;
+    }
+
+    footer {
+        flex-direction: column;
+    }
+
+    footer .column {
+        margin-bottom: 30px;
+    }
+}

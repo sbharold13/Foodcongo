@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodcongo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+</head>
+<body id="acceuil">
+    <nav id="nav" class="nav">
+        <h1><span>F</span>oodCongo</h1>
+        <ul>
+            <li id="label" onclick="mobile()"><i class="fa-solid fa-bars"></i></li>
+            <a href="#acceuil"><li>Acceuil</li></a>
+            <a href="#recipies"><li>Recettes</li></a>
+            <a href="#newsletter"><li>Contact</li></a>
+            <li>Menu</li>
+            <button>S'inscrire</button>
+        </ul>
+    </nav>
+
+<header>
+    <video autoplay loop muted playsinline>
+        <source src="Images/pizza1.mp4" type="video/mp4">
+    </video>
+    <div class="left">
+        <h1>Mangez à votre faim, un resto de luxe sans luxe</h1>
+        <p class="description">
+            Ne laissez pas votre faim attendre. Commandez maintenant et laissez-nous vous régaler avec des saveurs qui font la différence. Chaque plat est préparé avec soin — parce que vous le méritez.
+        </p>
+        <button>Commencer</button>
+    </div>
+</header>
+
+<section class="presentation">
+    <div class="left">
+        <img src="Images/plat.png" alt="plat de pates">
+    </div>
+    <div class="right">
+        <p class="mini-title">À propos de nous</p>
+        <h1>Que faisons-nous de special dans nos restaurants ?</h1>
+        <p class="description">
+            Chez nous, chaque assiette raconte une histoire. Nous sélectionnons nos ingrédients avec soin, directement auprès de producteurs locaux et passionnés, pour vous offrir une cuisine authentique, généreuse et pleine de saveurs. Notre équipe met tout son cœur à vous accueillir dans une ambiance chaleureuse, où chaque repas devient un véritable moment de partage. Parce que bien manger, c'est aussi bien vivre.
+        </p>
+    </div>
+</section>    
+
+<section id="recipies">
+    <p class="mini-title">Nos recettes</p>
+    <h2>Qui sont les plus populaires ?</h2>
+    <div class="cards">
+        <div class="card">
+            <img src="images/pizza.png" alt="recette">
+            <h3>Pizza</h3>
+            <div class="rating-stars">
+                <i class="fas fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-alt"></i>
+            </div>
+            <p class="price">12.000FCFA</p>
+        </div>
+        <div class="card">
+            <img src="images/buger.png" alt="recette">
+            <h3>Burger</h3>
+            <div class="rating-stars">
+                <i class="fas fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-alt"></i>
+            </div>
+            <p class="price">10.000FCFA</p>
+        </div>
+        <div class="card">
+            <img src="images/Spaghetti.png" alt="recette">
+            <h3>Spaghetti</h3>
+            <div class="rating-stars">
+                <i class="fas fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-alt"></i>
+            </div>
+            <p class="price">8.000FCFA</p>
+        </div>
+        <div class="card">
+            <img src="images/tacos.png" alt="recette">
+            <h3>Tacos</h3>
+            <div class="rating-stars">
+                <i class="fas fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-alt"></i>
+            </div>
+            <p class="price">9.000FCFA</p>
+        </div>
+    </div>
+</section>
+
+<section id="newsletter">
+    <h1>Inscrivez-vous sur Foodcongo</h1>
+    <form>
+        <input type="text" />
+        <button>S'abonner</button>
+    </form>
+</section>
+
+<footer>
+    <div class="column important">
+        <h3>Merci à vous</h3>
+        <p>&copy; copyright Foodcongo, 2026 | Tous droits réservés</p>
+    </div>
+    <div class="column">
+        <h3>Nos services</h3>
+        <p>Boutiques</p>
+        <p>Restaurants</p>
+        <p>Livraison</p>
+    </div>
+    <div class="column">
+        <h3>Recrutement</h3>
+        <p>recrutement@sbharold.fr</p>
+        <p>Postuler pour un emploi</p>
+        <p>Job étudiant</p>
+    </div>
+    <div class="column">
+        <h3>Nos locaux</h3>
+        <p>Brazzaville</p>
+        <p>Pointe-Noire</p>
+        <p>Dolisie</p>
+    </div>
+</footer>
+
+<script>
+    function mobile() {
+        var x = document.getElementById('nav');
+        if(x.className === 'nav') {
+            x.className += ' responsive';
+        } else {
+            x.className = 'nav';
+        }
+    }
+</script>
+
+</body>
+</html>

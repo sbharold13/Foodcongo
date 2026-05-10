@@ -45,6 +45,7 @@ h1{
 img {
     cursor: pointer;
     transition: 0.4s;
+    -webkit-touch-callout: none;
 }
 
 img:hover {
@@ -137,7 +138,6 @@ header video {
     z-index: 0;
 }
 
-/* Overlay sombre pour lisibilité du texte */
 header::after {
     content: '';
     position: absolute;
@@ -271,6 +271,8 @@ header .left button:hover {
     filter: brightness(90%);
     animation: rotateFood 5s linear infinite;
     transition: 0.4s;
+    -webkit-touch-callout: none;
+    pointer-events: none;
 }
 
 #recipies .cards .card h3 {
@@ -376,6 +378,7 @@ footer .important {
     h1 {
         font-size: 2rem;
     }
+
     nav {
         margin-left: -20px;
         margin-right: -20px;
@@ -384,6 +387,7 @@ footer .important {
     }
 
     nav ul li,
+    nav ul a,
     nav ul button {
         display: none;
     }
@@ -405,12 +409,23 @@ footer .important {
 
     nav.responsive ul li {
         display: block;
-        margin: 15px 0;
+    }
+
+    nav.responsive ul a {
+        display: block;
+        color: white;
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    nav.responsive ul button {
+        display: inline-block;
+        margin-top: 10px;
     }
 
     nav.responsive ul #label {
         position: absolute;
-        right: 0;
+        right: 20px;
         top: 10px;
     }
 
@@ -426,12 +441,14 @@ footer .important {
 
     header .left {
         padding: 30px 20px;
-        background: linear-gradient(to top,rgba(0,0,0,0.9), transparent);
+        background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
         width: 100%;
     }
+
     header .left h1 {
         font-size: 1.8rem;
     }
+
     header .left .description {
         color: rgba(255, 255, 255, 0.85);
         font-size: 13px;
